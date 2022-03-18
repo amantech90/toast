@@ -1,0 +1,57 @@
+html{
+    font-family: Garamond, "Apple Garamond", serif;
+}
+
+.toast{
+    border-radius: 10px;
+    border: 1px solid #292929;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+
+}
+
+.toast-container[data-position$= '-left'] .toast{
+    transform: translate(-110px);
+}
+.toast-container[data-position$= '-right'] .toast{
+    transform: translate(110px);
+}
+.toast.show{
+    transform: translate(0px);
+}
+
+.toast.can-show::after{
+    content: '\00d7';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.toast-container{
+    position: fixed;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+}
+
+.toast-container[data-position$= '-center']{
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.toast-container[data-position^= 'top-']{
+ top: 0px;
+}
+.toast-container[data-position^= 'bottom-']{
+    bottom: 0px;
+}
+.toast-container[data-position$= '-left']{
+    left: 0px;
+}
+.toast-container[data-position$= '-right']{
+    right: 0px;
+}
